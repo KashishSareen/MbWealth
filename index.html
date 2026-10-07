@@ -1,0 +1,2423 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MB Wealth | Plan. Invest. Grow.</title>
+    <meta
+      name="description"
+      content="MB Wealth offers mutual funds, SIP, life insurance, student education plans and financial planning with 25+ years of experience."
+    />
+    <link rel="icon" href="images/mb_wealth_logo.jpeg" type="image/jpeg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: {
+                950: "#07102A",
+                900: "#0E1C45",
+                800: "#172554",
+                700: "#1E3A8A",
+              },
+              gold: {
+                DEFAULT: "#C9A84C",
+                400: "#E2BF6B",
+                300: "#F0D48A",
+                100: "#FDF6E3",
+              },
+              teal: { DEFAULT: "#0D9488", 400: "#2DD4BF", 600: "#0F766E" },
+              sky: { brand: "#38BDF8" },
+            },
+            fontFamily: {
+              sans: ["DM Sans", "sans-serif"],
+              display: ["Playfair Display", "serif"],
+            },
+            backgroundImage: {
+              "hero-grad":
+                "linear-gradient(135deg,#07102A 0%,#0E1C45 45%,#172554 70%,#1a3065 100%)",
+              "gold-grad": "linear-gradient(135deg,#C9A84C,#F0D48A)",
+              "teal-grad": "linear-gradient(135deg,#0D9488,#2DD4BF)",
+              "card-grad": "linear-gradient(145deg,#0E1C45,#1E3A8A)",
+              "warm-grad": "linear-gradient(135deg,#FDF6E3,#fff)",
+              "section-grad": "linear-gradient(180deg,#f8faff 0%,#eef4ff 100%)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* ── Base ── */
+      html,
+      body {
+        overflow-x: hidden;
+        max-width: 100%;
+      }
+      body {
+        overflow-x: clip;
+      }
+
+      /* ── Typography ── */
+      .text-gold {
+        color: #c9a84c;
+      }
+      .text-gold-light {
+        color: #e2bf6b;
+      }
+
+      /* ── Gradient text ── */
+      .grad-text-gold {
+        background: linear-gradient(90deg, #c9a84c, #f0d48a);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .grad-text-teal {
+        background: linear-gradient(90deg, #0d9488, #2dd4bf);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      /* ── Buttons ── */
+      .btn-gold {
+        background: linear-gradient(135deg, #c9a84c, #e2bf6b);
+        color: #07102a;
+        font-weight: 700;
+      }
+      .btn-gold:hover {
+        background: linear-gradient(135deg, #e2bf6b, #f0d48a);
+      }
+      .btn-outline {
+        border: 2px solid rgba(201, 168, 76, 0.6);
+        color: #e2bf6b;
+        font-weight: 700;
+        background: transparent;
+      }
+      .btn-outline:hover {
+        background: rgba(201, 168, 76, 0.12);
+      }
+
+      /* ── Nav ── */
+      .nav-scrolled {
+        background: rgba(7, 16, 42, 0.96) !important;
+        backdrop-filter: blur(14px);
+        box-shadow: 0 4px 32px rgba(0, 0, 0, 0.35);
+        border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+      }
+      .nav-link {
+        position: relative;
+        padding-bottom: 2px;
+        transition: color 0.25s;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #c9a84c, #e2bf6b);
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* ── Hero ── */
+      .hero-bg {
+        background: linear-gradient(
+          135deg,
+          #07102a 0%,
+          #0e1c45 45%,
+          #172554 70%,
+          #1a3065 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-bg::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 700px 500px at 80% 20%,
+            rgba(201, 168, 76, 0.12),
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse 500px 400px at 10% 80%,
+            rgba(13, 148, 136, 0.12),
+            transparent 60%
+          );
+        pointer-events: none;
+      }
+      .hero-orb {
+        position: absolute;
+        border-radius: 9999px;
+        filter: blur(80px);
+        pointer-events: none;
+        animation: orb-float 8s ease-in-out infinite alternate;
+      }
+      @keyframes orb-float {
+        from {
+          transform: translateY(0) scale(1);
+          opacity: 0.55;
+        }
+        to {
+          transform: translateY(-30px) scale(1.08);
+          opacity: 0.75;
+        }
+      }
+
+      /* ── Cards ── */
+      .card {
+        transition:
+          transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 28px 60px -18px rgba(7, 16, 42, 0.28);
+      }
+      .service-card {
+        border: 1px solid rgba(226, 191, 107, 0.2);
+        transition:
+          border-color 0.3s,
+          transform 0.32s,
+          box-shadow 0.32s;
+      }
+      .service-card:hover {
+        border-color: rgba(201, 168, 76, 0.5);
+        transform: translateY(-7px);
+        box-shadow: 0 24px 50px -16px rgba(7, 16, 42, 0.22);
+      }
+      .icon-wrap {
+        background: linear-gradient(135deg, #c9a84c, #e2bf6b);
+        color: #07102a;
+      }
+      .icon-wrap-teal {
+        background: linear-gradient(135deg, #0d9488, #2dd4bf);
+        color: #fff;
+      }
+
+      /* ── Why cards ── */
+      .why-card::before {
+        content: "";
+        display: block;
+        height: 4px;
+        width: 100%;
+        background: linear-gradient(90deg, #c9a84c, #e2bf6b);
+        border-radius: 4px 4px 0 0;
+      }
+
+      /* ── Steps ── */
+      .step-card {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(12px);
+        transition:
+          background 0.3s,
+          border-color 0.3s;
+      }
+      .step-card:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(201, 168, 76, 0.4);
+      }
+
+      /* ── FAQ ── */
+      details summary {
+        list-style: none;
+        cursor: pointer;
+      }
+      details summary::-webkit-details-marker {
+        display: none;
+      }
+      details[open] .faq-icon {
+        transform: rotate(45deg);
+      }
+      .faq-icon {
+        transition: transform 0.3s ease;
+      }
+      details[open] {
+        border-left: 3px solid #c9a84c;
+      }
+
+      /* ── Goal card images ── */
+      .goal-img {
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      .card:hover .goal-img {
+        transform: scale(1.06);
+      }
+
+      /* ── Dividers ── */
+      .section-divider {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(201, 168, 76, 0.3),
+          transparent
+        );
+      }
+
+      /* ── Floating badge ── */
+      .hero-badge {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(201, 168, 76, 0.3);
+        backdrop-filter: blur(10px);
+      }
+
+      /* ── Stat cards ── */
+      .stat-pill {
+        background: rgba(201, 168, 76, 0.12);
+        border: 1px solid rgba(201, 168, 76, 0.25);
+      }
+
+      /* ── Reduced motion ── */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        ::before,
+        ::after {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+
+      /* ── Scrollbar ── */
+      ::-webkit-scrollbar {
+        width: 7px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #07102a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #c9a84c;
+        border-radius: 4px;
+      }
+
+      /* ── Section label ── */
+      .section-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #c9a84c;
+        padding: 5px 16px;
+        border-radius: 9999px;
+        border: 1px solid rgba(201, 168, 76, 0.3);
+        background: rgba(201, 168, 76, 0.08);
+      }
+    </style>
+  </head>
+
+  <body class="font-sans text-slate-700 bg-white antialiased">
+    <!-- ══════════════ NAV ══════════════ -->
+    <header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-[72px] lg:h-20">
+
+        <!-- Logo only -->
+        <a href="#home" class="flex items-center" aria-label="MB Wealth Home">
+          <img src="images/mb_wealth_logo.jpeg" alt="MB Wealth"
+            class="object-contain drop-shadow-md" style="height:72px;width:72px"/>
+        </a>
+
+        <!-- Desktop nav -->
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-200" aria-label="Main navigation">
+          <a href="#home"     class="nav-link hover:text-gold-400">Home</a>
+          <a href="#about"    class="nav-link hover:text-gold-400">About</a>
+          <a href="#services" class="nav-link hover:text-gold-400">Services</a>
+          <a href="#planning" class="nav-link hover:text-gold-400">Planning</a>
+          <a href="#how"      class="nav-link hover:text-gold-400">Our Expertise</a>
+          <a href="tel:+919323946987"
+   class="btn-gold px-6 py-2.5 rounded-full text-sm shadow-lg shadow-yellow-900/20 hover:scale-105 transition">
+  Contact Us
+</a>
+        </nav>
+
+        <!-- Mobile hamburger -->
+        <button id="menuBtn" aria-label="Open menu" aria-expanded="false" class="lg:hidden text-white p-2">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="hidden lg:hidden border-t border-white/10"
+           style="background:rgba(7,16,42,0.97);backdrop-filter:blur(16px)">
+        <div class="px-6 py-6 flex flex-col gap-4 text-white font-semibold text-base">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#planning">Planning</a>
+          <a href="#how">Our Expertise</a>
+         <a href="tel:+919323946987" class="btn-gold text-center py-3 rounded-full mt-1">Contact Us</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ══════════════ HERO ══════════════ -->
+
+<section
+  id="home"
+  class="hero-bg relative min-h-screen flex items-center pt-24 pb-20 lg:pt-28 lg:pb-28 text-white"
+>
+  <!-- Decorative orbs -->
+  <div
+    class="hero-orb w-[500px] h-[500px] top-[-100px] right-[-80px]"
+    style="
+      background: radial-gradient(
+        circle,
+        rgba(201, 168, 76, 0.18),
+        transparent 70%
+      );
+    "
+  ></div>
+
+  <div
+    class="hero-orb w-[400px] h-[400px] bottom-[-60px] left-[-60px]"
+    style="
+      background: radial-gradient(
+        circle,
+        rgba(13, 148, 136, 0.15),
+        transparent 70%
+      );
+      animation-delay: 3s;
+    "
+  ></div>
+
+  <div
+    class="relative max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-16 items-center w-full"
+  >
+    <!-- Left -->
+    <div data-aos="fade-up" data-aos-duration="900">
+      <span class="section-label">
+        <svg class="w-3 h-3 fill-current" viewBox="0 0 8 8">
+          <circle cx="4" cy="4" r="4" />
+        </svg>
+        25+ Years of Experience · Financial Guidance You Can Trust
+      </span>
+
+      <h1
+        class="font-display text-5xl sm:text-6xl lg:text-[4.5rem] font-bold leading-[1.06] mt-6"
+      >
+        Plan Today.<br />
+        <span class="grad-text-gold">Grow Tomorrow.</span>
+      </h1>
+
+      <p class="mt-5 text-xl font-semibold text-slate-200">
+        Smart financial planning for the goals that matter most.
+      </p>
+
+      <p
+        class="mt-4 text-slate-300 max-w-xl leading-relaxed text-[1.05rem]"
+      >
+        At MB Wealth, we help individuals and families make informed
+        financial decisions through thoughtful planning, disciplined
+        investing, and solutions designed around their long-term goals.
+      </p>
+
+      <div class="mt-9 flex flex-wrap gap-4">
+        <a
+          href="#planning"
+          class="btn-gold px-8 py-3.5 rounded-full shadow-xl shadow-yellow-900/30 hover:scale-105 transition text-base"
+        >
+          Plan Your Future
+        </a>
+
+        <a
+          href="https://wa.me/919323946987?text=Hello%2C%20I%20have%20an%20enquiry%20from%20the%20MB%20Wealth%20website."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-outline px-8 py-3.5 rounded-full hover:scale-105 transition text-base flex items-center gap-2"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.05-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Get in Touch
+        </a>
+      </div>
+
+      <!-- Stats row -->
+      <div class="mt-10 flex flex-row gap-3 flex-wrap">
+        <div class="stat-pill rounded-2xl px-5 py-3 text-center flex-1 min-w-0">
+          <p class="font-display text-3xl font-bold grad-text-gold">25+</p>
+          <p class="text-xs text-slate-300 font-medium mt-0.5">Years Exp.</p>
+        </div>
+
+        <div class="stat-pill rounded-2xl px-5 py-3 text-center flex-1 min-w-0">
+          <p class="font-display text-3xl font-bold grad-text-teal">5</p>
+          <p class="text-xs text-slate-300 font-medium mt-0.5">Services</p>
+        </div>
+
+        <div class="stat-pill rounded-2xl px-5 py-3 text-center flex-1 min-w-0">
+          <p class="font-display text-xl font-bold text-white leading-tight">
+            Goal<br />Focused
+          </p>
+          <p class="text-xs text-slate-300 font-medium mt-0.5">Planning</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right — image card -->
+    <div
+      class="relative"
+      data-aos="zoom-in"
+      data-aos-duration="900"
+      data-aos-delay="150"
+    >
+      <div
+        class="absolute -inset-5 rounded-[2.5rem]"
+        style="
+          background: linear-gradient(
+            135deg,
+            rgba(201, 168, 76, 0.25),
+            rgba(13, 148, 136, 0.15)
+          );
+          filter: blur(28px);
+        "
+      ></div>
+
+      <!-- Image wrapper -->
+      <div
+        class="relative rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 group"
+      >
+        <img
+          src="https://ik.imagekit.io/m3mvlqd9uc/mbwealth/hero_section.jpg"
+          alt="Family planning their financial future"
+          class="w-full h-[440px] sm:h-[520px] object-cover transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-1"
+          loading="eager"
+          onerror="this.style.display = 'none'"
+        />
+
+        <!-- Overlay gradient -->
+        <div
+          class="absolute inset-0 pointer-events-none transition-opacity duration-700 group-hover:opacity-70"
+          style="
+            background: linear-gradient(
+              to top,
+              rgba(7, 16, 42, 0.55),
+              transparent 60%
+            );
+          "
+        ></div>
+
+        <!-- Subtle shine -->
+        <div
+          class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-700"
+          style="
+            background: linear-gradient(
+              115deg,
+              transparent 35%,
+              rgba(255, 255, 255, 0.16) 50%,
+              transparent 65%
+            );
+            transform: translateX(-100%);
+          "
+        ></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <div class="section-divider"></div>
+
+    <!-- ══════════════ ABOUT ══════════════ -->
+   <section id="about" class="py-24 bg-white">
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-16 items-center"
+  >
+    <!-- Image side -->
+    <div class="relative" data-aos="fade-right" data-aos-duration="800">
+      <div
+        class="absolute -inset-3 rounded-[2.5rem]"
+        style="
+          background: linear-gradient(
+            135deg,
+            rgba(201, 168, 76, 0.12),
+            rgba(13, 148, 136, 0.1)
+          );
+          filter: blur(20px);
+        "
+      ></div>
+
+      <div class="relative overflow-hidden rounded-[2rem] shadow-2xl group">
+        <img
+          src="https://ik.imagekit.io/m3mvlqd9uc/mbwealth/work.jpg"
+          alt="Financial advisor reviewing a plan"
+          class="w-full h-[460px] object-cover border border-slate-100 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-1 group-hover:shadow-2xl"
+          loading="lazy"
+        />
+
+        <!-- Subtle gold shine effect -->
+        <div
+          class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+          style="
+            background: linear-gradient(
+              120deg,
+              transparent 30%,
+              rgba(255,255,255,0.18) 50%,
+              transparent 70%
+            );
+            transform: translateX(-100%);
+          "
+        ></div>
+      </div>
+    </div>
+
+    <!-- Text side -->
+    <div data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
+      <span class="section-label">About MB Wealth</span>
+
+      <h2
+        class="font-display text-4xl lg:text-5xl font-bold text-navy-900 leading-tight mt-5"
+      >
+        Building Financial Confidence <br class="hidden sm:block" />for Over
+        25 Years
+      </h2>
+
+      <p class="mt-5 leading-relaxed text-slate-600">
+        At MB Wealth, we believe that financial planning is not just about
+        investing money—it's about creating a secure and confident future.
+      </p>
+
+      <p class="mt-4 leading-relaxed text-slate-600">
+        With 25+ years of experience, we provide personalized financial
+        guidance to help individuals and families plan for important life
+        goals, from children's education and family protection to long-term
+        wealth creation and financial security.
+      </p>
+
+      <p class="mt-4 leading-relaxed text-slate-600">
+        Our approach focuses on understanding your goals, evaluating your
+        needs, and helping you choose suitable financial solutions with
+        clarity and discipline.
+      </p>
+
+      <!-- Philosophy box -->
+      <div
+        class="mt-8 rounded-2xl p-6"
+        style="
+          background: linear-gradient(145deg, #fdf6e3, #fff);
+          border: 1px solid rgba(201, 168, 76, 0.3);
+        "
+      >
+        <p class="font-display text-xl font-bold text-navy-900">
+          Our Philosophy
+        </p>
+
+        <p class="mt-1 font-bold text-lg grad-text-gold">
+          Plan. Invest. Grow.
+        </p>
+
+        <p class="mt-2 text-sm leading-relaxed text-slate-600">
+          The right financial decisions, made consistently over time, can
+          help turn today's plans into tomorrow's possibilities.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- ══════════════ MISSION / VISION ══════════════ -->
+    <section
+      class="py-20"
+      style="background: linear-gradient(180deg, #f8faff 0%, #eef4ff 100%)"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Mission -->
+          <div
+            class="card rounded-3xl p-9 text-white relative overflow-hidden"
+            style="background: linear-gradient(145deg, #0e1c45, #1e3a8a)"
+            data-aos="fade-up"
+          >
+            <div
+              class="absolute top-0 right-0 w-64 h-64 rounded-full opacity-20"
+              style="
+                background: radial-gradient(circle, #c9a84c, transparent);
+                transform: translate(30%, -30%);
+              "
+            ></div>
+            <div
+              class="w-12 h-12 rounded-2xl icon-wrap grid place-items-center mb-6"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+            </div>
+            <h3 class="font-display text-3xl font-bold">Our Mission</h3>
+            <p class="mt-4 text-slate-300 leading-relaxed">
+              To provide simple, transparent, and goal-oriented financial
+              guidance that helps individuals and families make informed
+              decisions about their financial future.
+            </p>
+            <p class="mt-3 text-slate-400 leading-relaxed text-sm">
+              We aim to make financial planning easier to understand while
+              encouraging disciplined investing and long-term thinking.
+            </p>
+          </div>
+
+          <!-- Vision -->
+          <div
+            class="card rounded-3xl p-9 bg-white relative overflow-hidden shadow-lg"
+            style="border: 1px solid rgba(201, 168, 76, 0.25)"
+            data-aos="fade-up"
+            data-aos-delay="120"
+          >
+            <div
+              class="absolute top-0 right-0 w-64 h-64 rounded-full opacity-10"
+              style="
+                background: radial-gradient(circle, #0d9488, transparent);
+                transform: translate(30%, -30%);
+              "
+            ></div>
+            <div
+              class="w-12 h-12 rounded-2xl icon-wrap-teal grid place-items-center mb-6"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                />
+              </svg>
+            </div>
+            <h3 class="font-display text-3xl font-bold text-navy-900">
+              Our Vision
+            </h3>
+            <p class="mt-4 leading-relaxed text-slate-600">
+              To become a trusted financial partner for individuals and families
+              by helping them build a financially secure and confident future
+              through thoughtful planning and responsible investing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ══════════════ SERVICES ══════════════ -->
+    <section id="services" class="py-24 relative overflow-hidden">
+    
+      <div class="absolute inset-0 z-0">
+        <!-- Base warm cream-to-blue gradient -->
+        <div
+          class="absolute inset-0"
+          style="
+            background: linear-gradient(
+              135deg,
+              #fdf8f0 0%,
+              #f0f4ff 40%,
+              #e8f0fe 70%,
+              #f5f0ff 100%
+            );
+          "
+        ></div>
+        <!-- Large soft gold orb top-left -->
+        <div
+          class="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full pointer-events-none"
+          style="
+            background: radial-gradient(
+              circle,
+              rgba(201, 168, 76, 0.13),
+              transparent 65%
+            );
+          "
+        ></div>
+        <!-- Large soft navy orb bottom-right -->
+        <div
+          class="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full pointer-events-none"
+          style="
+            background: radial-gradient(
+              circle,
+              rgba(14, 28, 69, 0.08),
+              transparent 65%
+            );
+          "
+        ></div>
+        <!-- Subtle teal orb center -->
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none"
+          style="
+            background: radial-gradient(
+              ellipse,
+              rgba(13, 148, 136, 0.05),
+              transparent 65%
+            );
+          "
+        ></div>
+        <!-- Fine dot pattern overlay -->
+        <div
+          class="absolute inset-0 pointer-events-none opacity-30"
+          style="
+            background-image: radial-gradient(
+              circle,
+              rgba(14, 28, 69, 0.12) 1px,
+              transparent 1px
+            );
+            background-size: 28px 28px;
+          "
+        ></div>
+      </div>
+
+      <!-- Content -->
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-xl mx-auto mb-14" data-aos="fade-up">
+          <span class="section-label">Our Services</span>
+          <h2
+            class="font-display text-4xl lg:text-5xl font-bold text-navy-900 mt-4 leading-tight"
+          >
+            What We <span class="grad-text-gold">Offer You</span>
+          </h2>
+          <p class="mt-3 text-slate-600 leading-relaxed">
+            Five focused services built around your goals and your family's
+            future.
+          </p>
+        </div>
+
+        <!-- Row 1 — 3 cards -->
+        <div
+          class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+          data-aos="fade-up"
+          data-aos-delay="60"
+        >
+          <!-- Card 1 — Mutual Funds -->
+          <div
+            class="group relative rounded-3xl p-8 overflow-hidden hover:-translate-y-2 transition-all duration-300"
+            style="
+              background: linear-gradient(145deg, #07102a, #0e1c45);
+              border: 1px solid rgba(201, 168, 76, 0.2);
+              box-shadow: 0 8px 32px rgba(7, 16, 42, 0.18);
+              min-height: 260px;
+            "
+          >
+            <div
+              class="absolute top-0 right-0 w-40 h-40 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+              style="
+                background: radial-gradient(
+                  circle,
+                  rgba(201, 168, 76, 0.12),
+                  transparent 65%
+                );
+                transform: translate(20%, -20%);
+              "
+            ></div>
+            <div
+              class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110"
+              style="
+                background: rgba(201, 168, 76, 0.12);
+                border: 1px solid rgba(201, 168, 76, 0.3);
+              "
+            >
+              <svg
+                class="w-7 h-7"
+                fill="none"
+                stroke="#C9A84C"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <ellipse cx="12" cy="6" rx="7" ry="3" />
+                <path
+                  d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Mutual Funds</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Explore investment solutions designed for long-term wealth
+              creation and financial goals.
+            </p>
+          
+          </div>
+
+          <!-- Card 2 — SIP -->
+          <div
+            class="group relative rounded-3xl p-8 overflow-hidden hover:-translate-y-2 transition-all duration-300"
+            style="
+              background: linear-gradient(145deg, #07102a, #0e1c45);
+              border: 1px solid rgba(201, 168, 76, 0.2);
+              box-shadow: 0 8px 32px rgba(7, 16, 42, 0.18);
+              min-height: 260px;
+            "
+          >
+            <div
+              class="absolute top-0 right-0 w-40 h-40 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+              style="
+                background: radial-gradient(
+                  circle,
+                  rgba(201, 168, 76, 0.12),
+                  transparent 65%
+                );
+                transform: translate(20%, -20%);
+              "
+            ></div>
+            <div
+              class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110"
+              style="
+                background: rgba(201, 168, 76, 0.12);
+                border: 1px solid rgba(201, 168, 76, 0.3);
+              "
+            >
+              <svg
+                class="w-7 h-7"
+                fill="none"
+                stroke="#C9A84C"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 20V14M10 20V10M16 20v-7M22 20V5M3 20h19"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">SIP</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Build a disciplined investment habit through systematic investing
+              aligned with your financial objectives.
+            </p>
+            
+          </div>
+
+          <!-- Card 3 — Life Insurance -->
+          <div
+            class="group relative rounded-3xl p-8 overflow-hidden hover:-translate-y-2 transition-all duration-300"
+            style="
+              background: linear-gradient(145deg, #07102a, #0e1c45);
+              border: 1px solid rgba(201, 168, 76, 0.2);
+              box-shadow: 0 8px 32px rgba(7, 16, 42, 0.18);
+              min-height: 260px;
+            "
+          >
+            <div
+              class="absolute top-0 right-0 w-40 h-40 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+              style="
+                background: radial-gradient(
+                  circle,
+                  rgba(201, 168, 76, 0.12),
+                  transparent 65%
+                );
+                transform: translate(20%, -20%);
+              "
+            ></div>
+            <div
+              class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110"
+              style="
+                background: rgba(201, 168, 76, 0.12);
+                border: 1px solid rgba(201, 168, 76, 0.3);
+              "
+            >
+              <svg
+                class="w-7 h-7"
+                fill="none"
+                stroke="#C9A84C"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3zM8.5 12l2.5 2.5 4.5-5"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Life Insurance</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Protect your family's financial future with appropriate life
+              insurance planning.
+            </p>
+          
+          </div>
+        </div>
+
+        <!-- Row 2 — 2 cards centred -->
+        <div
+          class="grid sm:grid-cols-2 gap-5 mt-5 lg:w-2/3 lg:mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="120"
+        >
+          <!-- Card 4 — Student Education Plans -->
+          <div
+            class="group relative rounded-3xl p-8 overflow-hidden hover:-translate-y-2 transition-all duration-300"
+            style="
+              background: linear-gradient(145deg, #07102a, #0e1c45);
+              border: 1px solid rgba(201, 168, 76, 0.2);
+              box-shadow: 0 8px 32px rgba(7, 16, 42, 0.18);
+              min-height: 260px;
+            "
+          >
+            <div
+              class="absolute top-0 right-0 w-40 h-40 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+              style="
+                background: radial-gradient(
+                  circle,
+                  rgba(201, 168, 76, 0.12),
+                  transparent 65%
+                );
+                transform: translate(20%, -20%);
+              "
+            ></div>
+            <div
+              class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110"
+              style="
+                background: rgba(201, 168, 76, 0.12);
+                border: 1px solid rgba(201, 168, 76, 0.3);
+              "
+            >
+              <svg
+                class="w-7 h-7"
+                fill="none"
+                stroke="#C9A84C"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 4L2 9l10 5 10-5-10-5zM6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">
+              Student Education Plans
+            </h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Plan ahead for your child's education and work towards meeting
+              future educational expenses.
+            </p>
+            
+          </div>
+
+          <!-- Card 5 — Financial Planning (gold-accented) -->
+          <div
+            class="group relative rounded-3xl p-8 overflow-hidden hover:-translate-y-2 transition-all duration-300"
+            style="
+              background: linear-gradient(145deg, #0e1c45, #172554);
+              border: 1px solid rgba(201, 168, 76, 0.45);
+              box-shadow: 0 8px 40px rgba(201, 168, 76, 0.12);
+              min-height: 260px;
+            "
+          >
+            <!-- Permanent gold glow top-right -->
+            <div
+              class="absolute top-0 right-0 w-48 h-48 pointer-events-none"
+              style="
+                background: radial-gradient(
+                  circle,
+                  rgba(201, 168, 76, 0.18),
+                  transparent 65%
+                );
+                transform: translate(20%, -20%);
+              "
+            ></div>
+            <div
+              class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
+              style="
+                background: radial-gradient(
+                  ellipse 300px 200px at 50% 10%,
+                  rgba(201, 168, 76, 0.14),
+                  transparent
+                );
+              "
+            ></div>
+            <div
+              class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110 relative"
+              style="
+                background: rgba(201, 168, 76, 0.18);
+                border: 1px solid rgba(201, 168, 76, 0.5);
+              "
+            >
+              <svg
+                class="w-7 h-7"
+                fill="none"
+                stroke="#E2BF6B"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <circle cx="12" cy="12" r="5" />
+                <circle cx="12" cy="12" r="1.5" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3 relative">
+              Financial Planning
+            </h3>
+            <p class="text-sm text-slate-400 leading-relaxed relative">
+              Create a structured financial roadmap based on your goals,
+              priorities, and different stages of life.
+            </p>
+           
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ WHY MB WEALTH ══════════════ -->
+    <section
+  class="py-28 relative overflow-hidden"
+  style="
+    background: linear-gradient(
+      135deg,
+      #07102a 0%,
+      #0e1c45 50%,
+      #172554 100%
+    );
+  "
+>
+  <!-- Ambient glow -->
+  <div
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none"
+    style="
+      background: radial-gradient(
+        circle,
+        rgba(201, 168, 76, 0.07),
+        transparent 65%
+      );
+    "
+  ></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+      <span class="section-label">Why Choose Us</span>
+      <h2
+        class="font-display text-4xl lg:text-5xl font-bold text-white mt-5"
+      >
+        Why <span class="grad-text-gold">MB Wealth?</span>
+      </h2>
+      <p class="mt-4 text-slate-400 text-lg">
+        What makes us the right financial partner for your journey.
+      </p>
+    </div>
+
+    <!-- 5 Reasons Cards Grid -->
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6"
+      data-aos="fade-up"
+      data-aos-delay="60"
+    >
+      <!-- Card 1 -->
+      <div
+        class="group p-8 rounded-3xl bg-white/[0.04] border border-white/10 hover:border-white/20 hover:bg-white/[0.08] transition-all duration-300 flex flex-col justify-between h-full"
+      >
+        <div>
+          <div
+            class="w-12 h-12 rounded-2xl icon-wrap grid place-items-center group-hover:scale-110 transition-transform mb-6"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+          <p class="font-display text-3xl font-bold grad-text-gold">25+</p>
+          <h3 class="mt-1 font-bold text-white text-base leading-snug">
+            Years of Experience
+          </h3>
+          <p class="mt-2 text-xs text-slate-400 leading-relaxed">
+            Decades helping families plan with greater clarity.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div
+        class="group p-8 rounded-3xl bg-white/[0.04] border border-white/10 hover:border-white/20 hover:bg-white/[0.08] transition-all duration-300 flex flex-col justify-between h-full"
+      >
+        <div>
+          <div
+            class="w-12 h-12 rounded-2xl icon-wrap grid place-items-center group-hover:scale-110 transition-transform mb-6"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+              />
+            </svg>
+          </div>
+          <h3 class="font-bold text-white text-base leading-snug">
+            Goal-Oriented Approach
+          </h3>
+          <p class="mt-2 text-xs text-slate-400 leading-relaxed">
+            Your goals drive every recommendation we make.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div
+        class="group p-8 rounded-3xl bg-white/[0.04] border border-white/10 hover:border-white/20 hover:bg-white/[0.08] transition-all duration-300 flex flex-col justify-between h-full"
+      >
+        <div>
+          <div
+            class="w-12 h-12 rounded-2xl icon-wrap-teal grid place-items-center group-hover:scale-110 transition-transform mb-6"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+              />
+            </svg>
+          </div>
+          <h3 class="font-bold text-white text-base leading-snug">
+            Personalized Guidance
+          </h3>
+          <p class="mt-2 text-xs text-slate-400 leading-relaxed">
+            Built around your unique situation and needs.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div
+        class="group p-8 rounded-3xl bg-white/[0.04] border border-white/10 hover:border-white/20 hover:bg-white/[0.08] transition-all duration-300 flex flex-col justify-between h-full"
+      >
+        <div>
+          <div
+            class="w-12 h-12 rounded-2xl icon-wrap grid place-items-center group-hover:scale-110 transition-transform mb-6"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+              />
+            </svg>
+          </div>
+          <h3 class="font-bold text-white text-base leading-snug">
+            Long-Term Perspective
+          </h3>
+          <p class="mt-2 text-xs text-slate-400 leading-relaxed">
+            Focused on objectives that matter for the future.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div
+        class="group p-8 rounded-3xl bg-white/[0.04] border border-white/10 hover:border-white/20 hover:bg-white/[0.08] transition-all duration-300 flex flex-col justify-between h-full"
+      >
+        <div>
+          <div
+            class="w-12 h-12 rounded-2xl icon-wrap-teal grid place-items-center group-hover:scale-110 transition-transform mb-6"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+              />
+            </svg>
+          </div>
+          <h3 class="font-bold text-white text-base leading-snug">
+            Simple &amp; Clear
+          </h3>
+          <p class="mt-2 text-xs text-slate-400 leading-relaxed">
+            Complex ideas explained in plain, simple language.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom banner inside Why section -->
+    <div
+      class="mt-12 rounded-3xl p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6"
+      style="
+        background: rgba(201, 168, 76, 0.08);
+        border: 1px solid rgba(201, 168, 76, 0.2);
+      "
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
+      <div>
+        <p class="font-display text-2xl font-bold text-white">
+          Ready to start your financial journey?
+        </p>
+        <p class="mt-1 text-slate-400 text-sm">
+          Talk to MB Wealth today — it starts with a simple conversation.
+        </p>
+      </div>
+      <a
+        href="https://wa.me/919323946987?text=Hello%2C%20I%20have%20an%20enquiry%20from%20the%20MB%20Wealth%20website."
+        target="_blank" rel="noopener noreferrer"
+        class="btn-gold px-8 py-3.5 rounded-full font-bold shadow-xl shadow-yellow-900/20 hover:scale-105 transition shrink-0 flex items-center gap-2"
+      >
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Get in Touch
+      </a>
+    </div>
+  </div>
+</section>
+
+    <!-- ══════════════ FINANCIAL PLANNING ══════════════ -->
+    <section id="planning" class="py-24 bg-white">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-16 items-center"
+      >
+        <div data-aos="fade-up">
+          <span class="section-label">Financial Planning</span>
+          <h2
+            class="font-display text-4xl lg:text-5xl font-bold text-navy-900 leading-tight mt-5"
+          >
+            Your Goals.<br /><span class="grad-text-gold">Our Commitment.</span>
+          </h2>
+          <p class="mt-4 text-lg font-semibold text-teal-600">
+            Every financial journey starts with a goal.
+          </p>
+          <p class="mt-3 leading-relaxed text-slate-600">
+            Whether you're planning for your child's education, protecting your
+            family, building long-term wealth, or preparing for the future,
+            having a clear financial plan can help you move forward with
+            confidence.
+          </p>
+
+          <p class="mt-6 font-bold text-navy-900">We help you plan for:</p>
+          <ul
+            class="mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-3 text-sm font-semibold"
+          >
+            <li class="flex items-center gap-2.5">
+              <span
+                class="w-5 h-5 rounded-full icon-wrap grid place-items-center shrink-0 text-xs"
+                >✔</span
+              >
+              Children's Education
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span
+                class="w-5 h-5 rounded-full icon-wrap grid place-items-center shrink-0 text-xs"
+                >✔</span
+              >
+              Wealth Creation
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span
+                class="w-5 h-5 rounded-full icon-wrap grid place-items-center shrink-0 text-xs"
+                >✔</span
+              >
+              Family Protection
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span
+                class="w-5 h-5 rounded-full icon-wrap grid place-items-center shrink-0 text-xs"
+                >✔</span
+              >
+              Long-Term Financial Goals
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span
+                class="w-5 h-5 rounded-full icon-wrap grid place-items-center shrink-0 text-xs"
+                >✔</span
+              >
+              Future Financial Security
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span
+                class="w-5 h-5 rounded-full icon-wrap grid place-items-center shrink-0 text-xs"
+                >✔</span
+              >
+              Life's Major Milestones
+            </li>
+          </ul>
+
+          <a
+            href="#contact"
+            class="inline-block mt-8 btn-gold px-8 py-3.5 rounded-full shadow-xl shadow-yellow-900/20 hover:scale-105 transition"
+          >
+            Let's Plan Your Financial Future
+          </a>
+        </div>
+
+        <div class="relative group" data-aos="zoom-in" data-aos-delay="100">
+          <div
+            class="absolute -inset-4 rounded-[2.5rem]"
+            style="
+              background: linear-gradient(
+                135deg,
+                rgba(201, 168, 76, 0.15),
+                rgba(13, 148, 136, 0.1)
+              );
+              filter: blur(20px);
+            "
+          ></div>
+          <!-- overflow-hidden wrapper for zoom + overlay effects -->
+          <div class="relative rounded-[2rem] overflow-hidden shadow-2xl border border-slate-100">
+            <img
+              src="https://ik.imagekit.io/m3mvlqd9uc/mbwealth/financial-planning-goals.jpg"
+              alt="Financial planning and wealth management"
+              class="w-full h-[460px] object-cover transition-transform duration-700 group-hover:scale-110"
+              loading="lazy"
+            />
+            <!-- Gold shimmer on hover -->
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                 style="background:linear-gradient(135deg,rgba(201,168,76,0.15),rgba(14,28,69,0.2))"></div>
+           
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ HOW WE WORK ══════════════ -->
+    <section id="how" class="py-24 hero-bg text-white relative overflow-hidden">
+      <div
+        class="absolute inset-0 opacity-20"
+        style="
+          background: radial-gradient(
+            ellipse 900px 500px at 80% 0%,
+            rgba(201, 168, 76, 0.4),
+            transparent 60%
+          );
+        "
+      ></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="max-w-2xl" data-aos="fade-up">
+          <span class="section-label">Our Process</span>
+          <h2 class="font-display text-4xl lg:text-5xl font-bold mt-5">
+            A Simple Approach to<br /><span class="grad-text-gold"
+              >Better Financial Planning</span
+            >
+          </h2>
+        </div>
+
+        <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="step-card rounded-3xl p-7 relative" data-aos="fade-up">
+            <div
+              class="font-display text-6xl font-bold grad-text-gold leading-none"
+            >
+              01
+            </div>
+            <h3 class="mt-4 text-xl font-bold">Understand</h3>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">
+              We begin by understanding your goals, priorities, and financial
+              requirements.
+            </p>
+          </div>
+
+          <div
+            class="step-card rounded-3xl p-7 relative"
+            data-aos="fade-up"
+            data-aos-delay="80"
+          >
+            <div
+              class="font-display text-6xl font-bold grad-text-gold leading-none"
+            >
+              02
+            </div>
+            <h3 class="mt-4 text-xl font-bold">Plan</h3>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">
+              We create a financial approach aligned with your objectives and
+              priorities.
+            </p>
+          </div>
+
+          <div
+            class="step-card rounded-3xl p-7 relative"
+            data-aos="fade-up"
+            data-aos-delay="160"
+          >
+            <div
+              class="font-display text-6xl font-bold grad-text-gold leading-none"
+            >
+              03
+            </div>
+            <h3 class="mt-4 text-xl font-bold">Invest</h3>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">
+              We help you understand suitable investment and financial
+              solutions.
+            </p>
+          </div>
+
+          <div
+            class="step-card rounded-3xl p-7 relative"
+            data-aos="fade-up"
+            data-aos-delay="240"
+          >
+            <div
+              class="font-display text-6xl font-bold grad-text-gold leading-none"
+            >
+              04
+            </div>
+            <h3 class="mt-4 text-xl font-bold">Grow</h3>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">
+              With disciplined planning and regular reviews, we help you stay
+              focused on your long-term goals.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ GOALS ══════════════ -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto" data-aos="fade-up">
+          <span class="section-label">Your Goals</span>
+          <h2
+            class="font-display text-4xl lg:text-5xl font-bold text-navy-900 mt-5"
+          >
+            Plan for What Matters Most
+          </h2>
+          <p class="mt-3 text-lg text-slate-500">
+            Your financial goals are personal. Your planning should be too.
+          </p>
+        </div>
+
+        <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-7">
+          <div
+            class="card rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-md"
+            data-aos="fade-up"
+          >
+            <div class="overflow-hidden h-48">
+              <img
+                src="https://ik.imagekit.io/m3mvlqd9uc/mbwealth/education.jpg"
+                alt="Students on campus"
+                class="goal-img w-full h-48"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-2">
+                <span
+                  class="w-2 h-2 rounded-full"
+                  style="background: #c9a84c"
+                ></span>
+                <h3 class="font-bold text-navy-900 text-lg">Education</h3>
+              </div>
+              <p class="text-sm text-slate-500 leading-relaxed">
+                Prepare financially for your child's future education.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="card rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="80"
+          >
+            <div class="overflow-hidden h-48">
+              <img
+                src="https://ik.imagekit.io/m3mvlqd9uc/mbwealth/wealth.jpg"
+                alt="Growing savings"
+                class="goal-img w-full h-48"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-2">
+                <span
+                  class="w-2 h-2 rounded-full"
+                  style="background: #0d9488"
+                ></span>
+                <h3 class="font-bold text-navy-900 text-lg">Wealth Creation</h3>
+              </div>
+              <p class="text-sm text-slate-500 leading-relaxed">
+                Work towards building wealth with a disciplined long-term
+                approach.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="card rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="160"
+          >
+            <div class="overflow-hidden h-48">
+              <img
+                src="https://ik.imagekit.io/m3mvlqd9uc/mbwealth/family.jpg"
+                alt="Happy family"
+                class="goal-img w-full h-48"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-2">
+                <span
+                  class="w-2 h-2 rounded-full"
+                  style="background: #c9a84c"
+                ></span>
+                <h3 class="font-bold text-navy-900 text-lg">
+                  Family Protection
+                </h3>
+              </div>
+              <p class="text-sm text-slate-500 leading-relaxed">
+                Plan for your family's financial security and protection.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="card rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="240"
+          >
+            <div class="overflow-hidden h-48">
+              <img
+                src="https://ik.imagekit.io/m3mvlqd9uc/mbwealth/future.jpg"
+                alt="Planning with a calculator"
+                class="goal-img w-full h-48"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-2">
+                <span
+                  class="w-2 h-2 rounded-full"
+                  style="background: #0d9488"
+                ></span>
+                <h3 class="font-bold text-navy-900 text-lg">Future Planning</h3>
+              </div>
+              <p class="text-sm text-slate-500 leading-relaxed">
+                Prepare financially for important milestones and changing needs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ TRUST / STATS ══════════════ -->
+    <section
+      class="py-20"
+      style="
+        background: linear-gradient(
+          135deg,
+          #07102a 0%,
+          #0e1c45 60%,
+          #172554 100%
+        );
+      "
+    >
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center text-white">
+        <span class="section-label" data-aos="fade-up">Our Track Record</span>
+        <h2
+          class="font-display text-3xl lg:text-4xl font-bold mt-5"
+          data-aos="fade-up"
+          data-aos-delay="60"
+        >
+          Experience That Helps You Plan With Confidence
+        </h2>
+        <p
+          class="mt-4 max-w-3xl mx-auto text-slate-300 leading-relaxed"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          For more than 25 years, MB Wealth has been focused on helping
+          individuals and families approach their financial goals with greater
+          clarity and discipline.
+        </p>
+
+        <div class="mt-12 grid sm:grid-cols-3 gap-6">
+          <div
+            class="rounded-3xl p-9 relative overflow-hidden"
+            style="background: linear-gradient(145deg, #c9a84c, #e2bf6b)"
+            data-aos="zoom-in"
+          >
+            <p class="font-display text-5xl font-bold text-navy-950">25+</p>
+            <p class="mt-2 text-sm font-bold text-navy-900">Years Experience</p>
+          </div>
+          <div
+            class="rounded-3xl p-9 relative overflow-hidden"
+            style="
+              background: rgba(255, 255, 255, 0.07);
+              border: 1px solid rgba(201, 168, 76, 0.2);
+            "
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
+            <p class="font-display text-2xl font-bold text-white leading-tight">
+              Goal-Focused
+            </p>
+            <p class="mt-2 text-sm font-bold text-slate-300">
+              Financial Planning
+            </p>
+          </div>
+          <div
+            class="rounded-3xl p-9 relative overflow-hidden"
+            style="
+              background: rgba(255, 255, 255, 0.07);
+              border: 1px solid rgba(13, 148, 136, 0.3);
+            "
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+            <p
+              class="font-display text-2xl font-bold grad-text-teal leading-tight"
+            >
+              Personalized
+            </p>
+            <p class="mt-2 text-sm font-bold text-slate-300">Guidance</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ CTA ══════════════ -->
+    <section class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div
+          class="rounded-[2.5rem] relative overflow-hidden text-white text-center px-6 py-20 shadow-2xl"
+          style="
+            background: linear-gradient(
+              135deg,
+              #07102a 0%,
+              #0e1c45 45%,
+              #172554 80%,
+              #1a3065 100%
+            );
+          "
+          data-aos="fade-up"
+        >
+          <!-- Glow overlays -->
+          <div
+            class="absolute inset-0 pointer-events-none"
+            style="
+              background: radial-gradient(
+                ellipse 600px 300px at 50% 0%,
+                rgba(201, 168, 76, 0.2),
+                transparent 60%
+              );
+            "
+          ></div>
+          <div
+            class="absolute inset-0 pointer-events-none"
+            style="
+              background: radial-gradient(
+                ellipse 400px 300px at 80% 100%,
+                rgba(13, 148, 136, 0.15),
+                transparent 60%
+              );
+            "
+          ></div>
+
+          <div class="relative">
+            <span class="section-label">Take Action</span>
+            <h2 class="font-display text-4xl lg:text-5xl font-bold mt-5">
+              Your Future Deserves <span class="grad-text-gold">a Plan.</span>
+            </h2>
+            <p class="mt-4 text-slate-300 text-lg">
+              Don't leave important financial goals to chance.
+            </p>
+            <p class="text-slate-400 mt-1">
+              Start planning today with guidance focused on your goals and your
+              future.
+            </p>
+            <div class="mt-9 flex flex-wrap justify-center gap-4">
+              <a
+                href="#contact"
+                class="btn-gold px-9 py-4 rounded-full text-base shadow-2xl shadow-yellow-900/30 hover:scale-105 transition"
+              >
+                Start Your Financial Journey
+              </a>
+              <a
+                href="tel:+919323946987"
+                class="btn-outline px-9 py-4 rounded-full text-base hover:scale-105 transition"
+              >
+                Talk to MB Wealth
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ FAQ ══════════════ -->
+    <section
+      id="faq"
+      class="py-24"
+      style="background: linear-gradient(180deg, #f8faff 0%, #eef4ff 100%)"
+    >
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <div class="text-center" data-aos="fade-up">
+          <span class="section-label">FAQs</span>
+          <h2
+            class="font-display text-4xl lg:text-5xl font-bold text-navy-900 mt-5"
+          >
+            Frequently Asked Questions
+          </h2>
+          <p class="mt-3 text-slate-500">
+            Quick answers to common questions about MB Wealth and financial
+            planning.
+          </p>
+        </div>
+
+        <div class="mt-12 space-y-4" data-aos="fade-up" data-aos-delay="80">
+          <details
+            class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 transition-all"
+          >
+            <summary
+              class="flex justify-between gap-4 font-bold text-navy-900 items-center"
+            >
+              What does MB Wealth help with?
+              <span
+                class="faq-icon w-8 h-8 rounded-full icon-wrap grid place-items-center shrink-0 text-xl font-light"
+                >+</span
+              >
+            </summary>
+            <p
+              class="mt-4 text-sm leading-relaxed text-slate-500 border-t border-slate-100 pt-4"
+            >
+              MB Wealth provides financial guidance across mutual funds, SIPs,
+              life insurance, student education planning, and financial
+              planning.
+            </p>
+          </details>
+
+          <details
+            class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 transition-all"
+          >
+            <summary
+              class="flex justify-between gap-4 font-bold text-navy-900 items-center"
+            >
+              Why is financial planning important?
+              <span
+                class="faq-icon w-8 h-8 rounded-full icon-wrap grid place-items-center shrink-0 text-xl font-light"
+                >+</span
+              >
+            </summary>
+            <p
+              class="mt-4 text-sm leading-relaxed text-slate-500 border-t border-slate-100 pt-4"
+            >
+              Financial planning helps you organize your finances around
+              specific goals and prepare for future financial requirements.
+            </p>
+          </details>
+
+          <details
+            class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 transition-all"
+          >
+            <summary
+              class="flex justify-between gap-4 font-bold text-navy-900 items-center"
+            >
+              What is an SIP?
+              <span
+                class="faq-icon w-8 h-8 rounded-full icon-wrap grid place-items-center shrink-0 text-xl font-light"
+                >+</span
+              >
+            </summary>
+            <p
+              class="mt-4 text-sm leading-relaxed text-slate-500 border-t border-slate-100 pt-4"
+            >
+              A Systematic Investment Plan (SIP) allows you to invest a fixed
+              amount at regular intervals, helping develop a disciplined
+              investment habit over time.
+            </p>
+          </details>
+
+          <details
+            class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 transition-all"
+          >
+            <summary
+              class="flex justify-between gap-4 font-bold text-navy-900 items-center"
+            >
+              Can financial planning help with children's education?
+              <span
+                class="faq-icon w-8 h-8 rounded-full icon-wrap grid place-items-center shrink-0 text-xl font-light"
+                >+</span
+              >
+            </summary>
+            <p
+              class="mt-4 text-sm leading-relaxed text-slate-500 border-t border-slate-100 pt-4"
+            >
+              Yes. Education planning can help you estimate future requirements
+              and work towards preparing financially for your child's
+              educational goals.
+            </p>
+          </details>
+
+          <details
+            class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 transition-all"
+          >
+            <summary
+              class="flex justify-between gap-4 font-bold text-navy-900 items-center"
+            >
+              How do I get started with MB Wealth?
+              <span
+                class="faq-icon w-8 h-8 rounded-full icon-wrap grid place-items-center shrink-0 text-xl font-light"
+                >+</span
+              >
+            </summary>
+            <p
+              class="mt-4 text-sm leading-relaxed text-slate-500 border-t border-slate-100 pt-4"
+            >
+              You can contact MB Wealth to discuss your financial goals and
+              requirements and understand the available planning and investment
+              options.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ CONTACT ══════════════ -->
+    <section id="contact" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+        <div class="text-center max-w-xl mx-auto mb-14" data-aos="fade-up">
+          <span class="section-label">Get In Touch</span>
+          <h2 class="font-display text-4xl lg:text-5xl font-bold text-navy-900 leading-tight mt-5">
+            Let's Plan <span class="grad-text-gold">Your Future</span>
+          </h2>
+          <p class="mt-3 text-slate-500 text-lg">Have a financial goal in mind? Let's start the conversation.</p>
+        </div>
+
+        <!-- Top: Left info + Right form -->
+        <div class="grid lg:grid-cols-2 gap-10 items-start mb-10">
+
+          <!-- Left — contact details -->
+         <div data-aos="fade-up" class="space-y-4">
+
+  <!-- Brand block -->
+  <div class="rounded-3xl p-7 text-white relative overflow-hidden"
+       style="background:linear-gradient(145deg,#07102A,#0E1C45);border:1px solid rgba(201,168,76,0.25)">
+
+    <div class="absolute top-0 right-0 w-40 h-40 pointer-events-none opacity-20"
+         style="background:radial-gradient(circle,#C9A84C,transparent);transform:translate(30%,-30%)">
+    </div>
+
+    <p class="font-display text-2xl font-bold grad-text-gold">
+      MB Wealth
+    </p>
+
+    <p class="text-slate-300 mt-1 text-sm">
+      Plan | Invest | Grow · 25+ Years of Experience
+    </p>
+
+    <p class="text-slate-400 mt-3 text-sm leading-relaxed">
+      Helping individuals and families make informed financial decisions through thoughtful planning and disciplined investing.
+    </p>
+
+  </div>
+
+
+  <!-- Phone clickable card -->
+  <a href="tel:+919323946987"
+     class="group flex items-center gap-4 rounded-2xl p-5 bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-gold/40 transition-all duration-300">
+
+    <div class="w-12 h-12 rounded-xl icon-wrap grid place-items-center shrink-0 group-hover:scale-110 transition-transform">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3 5a2 2 0 012-2h3l2 5-2.5 1.5a11 11 0 005 5L14 12l5 2v3a2 2 0 01-2 2A14 14 0 013 5z"/>
+      </svg>
+    </div>
+
+    <div>
+      <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider">
+        Call Us
+      </p>
+      <p class="font-bold text-navy-900 text-lg mt-0.5">
+        +91 93239 46987
+      </p>
+      <p class="text-xs text-slate-400 mt-0.5">
+        Tap to call directly
+      </p>
+    </div>
+
+  </a>
+
+
+  <!-- Email clickable card -->
+  <a href="mailto:mbwealth4@gmail.com"
+     class="group flex items-center gap-4 rounded-2xl p-5 bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-gold/40 transition-all duration-300">
+
+    <div class="w-12 h-12 rounded-xl icon-wrap grid place-items-center shrink-0 group-hover:scale-110 transition-transform">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="2"/>
+        <path d="M3 7l9 6 9-6"/>
+      </svg>
+    </div>
+
+    <div class="min-w-0">
+      <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider">
+        Email Us
+      </p>
+      <p class="font-bold text-navy-900 break-all mt-0.5">
+        mbwealth4@gmail.com
+      </p>
+      <p class="text-xs text-slate-400 mt-0.5">
+        Tap to email
+      </p>
+    </div>
+
+  </a>
+
+
+  <!-- WhatsApp card -->
+  <a href="https://wa.me/919323946987?text=Hello%2C%20I%20have%20an%20enquiry%20from%20the%20MB%20Wealth%20website."
+     target="_blank"
+     rel="noopener noreferrer"
+     class="group flex items-center gap-4 rounded-2xl p-5 text-white hover:opacity-90 transition-all duration-300"
+     style="background:linear-gradient(135deg,#075E54,#128C7E)">
+
+    <div class="w-12 h-12 rounded-xl bg-white/15 grid place-items-center shrink-0 group-hover:scale-110 transition-transform">
+
+      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+
+    </div>
+
+    <div>
+      <p class="text-xs text-green-200 font-semibold uppercase tracking-wider">
+        WhatsApp
+      </p>
+
+      <p class="font-bold text-lg mt-0.5">
+        Chat with us
+      </p>
+
+      <p class="text-xs text-green-200 mt-0.5">
+        Send us a message
+      </p>
+    </div>
+
+  </a>
+
+</div>
+
+          <!-- Right — enquiry form -->
+          <div data-aos="fade-up" data-aos-delay="100">
+            <div class="rounded-3xl p-8 shadow-xl border border-slate-100 bg-white">
+              <h3 class="font-display text-2xl font-bold text-navy-900 mb-6">Send an Enquiry</h3>
+              <form id="contactForm" action="" method="GET" >
+                <div class="grid sm:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5">Full Name</label>
+                    <input type="text" name="name" required placeholder="Your name"
+                      class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-navy-900 focus:outline-none focus:ring-2 focus:border-transparent transition"
+                      style="--tw-ring-color:rgba(201,168,76,0.5)"/>
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5">Phone</label>
+                    <input type="tel" name="phone" required placeholder="+91 XXXXX XXXXX"
+                      class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-navy-900 focus:outline-none focus:ring-2 focus:border-transparent transition"
+                      style="--tw-ring-color:rgba(201,168,76,0.5)"/>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5">Email</label>
+                  <input type="email" name="email" placeholder="your@email.com"
+                    class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-navy-900 focus:outline-none focus:ring-2 focus:border-transparent transition"
+                    style="--tw-ring-color:rgba(201,168,76,0.5)"/>
+                </div>
+                <div class="mb-4">
+                  <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5">Service Interested In</label>
+                  <select name="service"
+                    class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-navy-900 focus:outline-none focus:ring-2 focus:border-transparent transition bg-white"
+                    style="--tw-ring-color:rgba(201,168,76,0.5)">
+                    <option value="">Select a service</option>
+                    <option>Mutual Funds</option>
+                    <option>SIP</option>
+                    <option>Life Insurance</option>
+                    <option>Student Education Plans</option>
+                    <option>Financial Planning</option>
+                  </select>
+                </div>
+                <div class="mb-6">
+                  <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5">Message</label>
+                  <textarea name="message" rows="4" placeholder="Tell us about your financial goals..."
+                    class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-navy-900 focus:outline-none focus:ring-2 focus:border-transparent transition resize-none"
+                    style="--tw-ring-color:rgba(201,168,76,0.5)"></textarea>
+                </div>
+               <a href="/form/appointment-form"
+   class="w-full btn-gold py-3.5 rounded-xl font-bold text-base hover:scale-[1.02] transition shadow-lg shadow-yellow-900/20 text-center block">
+  Send Enquiry
+</a>
+              </form>
+
+              
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom: Full-width map -->
+        <div data-aos="fade-up" data-aos-delay="80">
+          <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-200" style="height:380px">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.6587709567516!2d72.852375!3d19.297199799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b1b8bfe9bff3%3A0xd8f319509422b483!2sMBWealth%20Consultant!5e0!3m2!1sen!2sin!4v1791191988522!5m2!1sen!2sin"
+              width="100%" height="100%" style="border:0;display:block;height:380px"
+              allowfullscreen="" loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              title="MB Wealth Office Location">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════ FOOTER ══════════════ -->
+    
+   <footer style="background:#07102A" class="text-slate-400 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+    <!-- Col 1 — Brand -->
+    <div>
+      <a href="#home" aria-label="MB Wealth">
+        <img
+          src="images/mb_wealth_logo.jpeg"
+          alt="MB Wealth"
+          class="object-contain"
+          style="height:90px;width:90px"
+        />
+      </a>
+
+      <p class="mt-4 text-sm leading-relaxed text-slate-400 max-w-xs">
+        Helping you make informed financial decisions and plan for the goals that matter most.
+      </p>
+
+    
+    </div>
+
+
+    <!-- Col 2 — Quick Links -->
+    <div>
+      <h4 class="font-bold text-white mb-5 text-sm uppercase tracking-wider">
+        Quick Links
+      </h4>
+
+      <ul class="space-y-2.5 text-sm">
+        <li>
+          <a href="#home" class="hover:text-gold-400 transition-colors">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="#about" class="hover:text-gold-400 transition-colors">
+            About Us
+          </a>
+        </li>
+
+        <li>
+          <a href="#services" class="hover:text-gold-400 transition-colors">
+            Services
+          </a>
+        </li>
+
+        <li>
+          <a href="#planning" class="hover:text-gold-400 transition-colors">
+            Financial Planning
+          </a>
+        </li>
+
+        <li>
+          <a href="#how" class="hover:text-gold-400 transition-colors">
+            How We Work
+          </a>
+        </li>
+
+        <li>
+          <a href="#contact" class="hover:text-gold-400 transition-colors">
+            Contact Us
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- Col 3 — Services -->
+    <div>
+      <h4 class="font-bold text-white mb-5 text-sm uppercase tracking-wider">
+        Services
+      </h4>
+
+      <ul class="space-y-2.5 text-sm">
+        <li class="text-slate-400">Mutual Funds</li>
+        <li class="text-slate-400">SIP</li>
+        <li class="text-slate-400">Life Insurance</li>
+        <li class="text-slate-400">Student Education Plans</li>
+        <li class="text-slate-400">Financial Planning</li>
+      </ul>
+    </div>
+
+
+    <!-- Col 4 — Contact -->
+    <div>
+      <h4 class="font-bold text-white mb-5 text-sm uppercase tracking-wider">
+        Contact
+      </h4>
+
+      <ul class="space-y-3 text-sm">
+
+        <!-- Phone -->
+        <li>
+          <a
+            href="tel:+919323946987"
+            class="flex items-center gap-2.5 hover:text-gold-400 transition-colors"
+          >
+            <svg
+              class="w-4 h-4 shrink-0"
+              style="color:#C9A84C"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 5a2 2 0 012-2h3l2 5-2.5 1.5a11 11 0 005 5L14 12l5 2v3a2 2 0 01-2 2A14 14 0 013 5z"
+              />
+            </svg>
+
+            +91 93239 46987
+          </a>
+        </li>
+
+
+        <!-- Email -->
+        <li>
+          <a
+            href="mailto:mbwealth4@gmail.com"
+            class="flex items-center gap-2.5 hover:text-gold-400 transition-colors break-all"
+          >
+            <svg
+              class="w-4 h-4 shrink-0"
+              style="color:#C9A84C"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <rect x="3" y="5" width="18" height="14" rx="2"/>
+              <path d="M3 7l9 6 9-6"/>
+            </svg>
+
+            mbwealth4@gmail.com
+          </a>
+        </li>
+
+      </ul>
+
+
+      <!-- Social Media Icons -->
+      <div class="flex items-center gap-3 mt-6">
+
+        <!-- Instagram -->
+        <a
+          href="https://www.instagram.com/mb.wealth"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          class="w-10 h-10 rounded-full grid place-items-center text-slate-300 hover:text-white hover:scale-110 transition-all"
+          style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12)"
+        >
+          <i class="fa-brands fa-instagram text-base"></i>
+        </a>
+
+
+        <!-- Facebook -->
+        <a
+          href="https://www.facebook.com/people/MB-Wealth/61570705196527/#"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          class="w-10 h-10 rounded-full grid place-items-center text-slate-300 hover:text-white hover:scale-110 transition-all"
+          style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12)"
+        >
+          <i class="fa-brands fa-facebook-f text-base "></i>
+        </a>
+
+
+        <!-- LinkedIn -->
+        <!-- <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          class="w-10 h-10 rounded-full grid place-items-center text-slate-300 hover:text-white hover:scale-110 transition-all"
+          style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12)"
+        >
+          <i class="fa-brands fa-linkedin-in text-base"></i>
+        </a> -->
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Divider + copyright -->
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 mt-12 pt-6"
+    style="border-top:1px solid rgba(201,168,76,0.15)"
+  >
+    <div class="flex flex-wrap justify-between gap-3 text-xs text-slate-500">
+
+      <p>
+        © <span id="yr"></span> MB Wealth. All rights reserved.
+      </p>
+
+      <p class="font-semibold grad-text-gold">
+        Plan | Invest | Grow
+      </p>
+
+    </div>
+  </div>
+
+</footer>
+
+    <!-- Floating WhatsApp button -->
+    <a href="https://wa.me/919323946987?text=Hello%2C%20I%20have%20an%20enquiry%20from%20the%20MB%20Wealth%20website."
+       target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"
+       class="fixed bottom-16 right-4 z-50 w-14 h-14 rounded-full grid place-items-center shadow-2xl hover:scale-110 transition-transform"
+       style="background:linear-gradient(135deg,#25D366,#128C7E);box-shadow:0 4px 20px rgba(37,211,102,0.4)">
+      <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+
+    <!-- ══════════════ SCRIPTS ══════════════ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      // AOS
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 60,
+        easing: "ease-out-cubic",
+      });
+
+      // Year
+      document.getElementById("yr").textContent = new Date().getFullYear();
+
+      // Nav scroll — also close mobile menu on scroll
+      const nav = document.getElementById("nav");
+      window.addEventListener(
+        "scroll",
+        () => {
+          nav.classList.toggle("nav-scrolled", window.scrollY > 40);
+          // close mobile menu when user scrolls
+          if (!menu.classList.contains("hidden")) setMenu(false);
+        },
+        { passive: true },
+      );
+
+      // Mobile menu
+      const menu = document.getElementById("mobileMenu");
+      const btn = document.getElementById("menuBtn");
+      function setMenu(open) {
+        menu.classList.toggle("hidden", !open);
+        btn.setAttribute("aria-expanded", open);
+      }
+      btn.addEventListener("click", () =>
+        setMenu(menu.classList.contains("hidden")),
+      );
+      menu
+        .querySelectorAll("a")
+        .forEach((a) => a.addEventListener("click", () => setMenu(false)));
+      document.addEventListener("click", (e) => {
+        if (!nav.contains(e.target)) setMenu(false);
+      });
+
+      // Smooth scroll offset for fixed nav
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const target = document.querySelector(a.getAttribute("href"));
+          if (target) {
+            e.preventDefault();
+            const y = target.getBoundingClientRect().top + window.scrollY - 80;
+            window.scrollTo({ top: y, behavior: "smooth" });
+          }
+        });
+      });
+
+      // Contact form — show success then reset
+     window.addEventListener('pageshow', function () {
+    const form = document.getElementById('contactForm');
+
+    if (form) {
+      form.reset();
+      form.classList.remove('hidden');
+    }
+  });
+
+    </script>
+  </body>
+</html>
