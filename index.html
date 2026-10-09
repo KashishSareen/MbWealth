@@ -6,7 +6,7 @@
     <title>MB Wealth | Plan. Invest. Grow.</title>
     <meta
       name="description"
-      content="MB Wealth offers mutual funds, SIP, life insurance, student education plans and financial planning with 25+ years of experience."
+      content="MB Wealth offers mutual funds, SIP, life insurance, mediclaim, housing loans, PMS, AIF and financial planning with 25+ years of experience."
     />
     <link rel="icon" href="images/mb_wealth_logo.jpeg" type="image/jpeg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -338,6 +338,21 @@
         padding: 2px 7px;
       }
 
+      #portfolioModal {
+        width: min(92vw, 38rem);
+        max-width: none;
+        padding: 0;
+        border: 1px solid rgba(226, 191, 107, 0.45);
+        border-radius: 24px;
+        color: #fff;
+        background: linear-gradient(145deg, #0e1c45, #07102a);
+        box-shadow: 0 28px 90px rgba(0, 0, 0, 0.45);
+      }
+      #portfolioModal::backdrop {
+        background: rgba(3, 8, 24, 0.76);
+        backdrop-filter: blur(7px);
+      }
+
     </style>
   </head>
 
@@ -471,22 +486,27 @@
 
       <!-- Stats row -->
       <div class="mt-10 flex flex-row gap-3 flex-wrap">
-        <div class="stat-pill rounded-2xl px-5 py-3 text-center flex-1 min-w-0">
-          <p class="font-display text-3xl font-bold grad-text-gold">25+</p>
-          <p class="text-xs text-slate-300 font-medium mt-0.5">Years Exp.</p>
-        </div>
+        <button
+          id="portfolioModalTrigger"
+          type="button"
+          aria-haspopup="dialog"
+          class="stat-pill rounded-2xl px-5 py-3 text-center flex-1 min-w-0 transition hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400"
+        >
+          <span class="block font-display text-3xl font-bold grad-text-gold">25+</span>
+          <span class="block text-xs text-slate-300 font-medium mt-0.5">Years Exp.</span>
+        </button>
 
-        <div class="stat-pill rounded-2xl px-5 py-3 text-center flex-1 min-w-0">
-          <p class="font-display text-3xl font-bold grad-text-teal">5</p>
+        <a href="#services" aria-label="Explore our services" class="stat-pill rounded-2xl px-5 py-3 text-center flex-1 min-w-0 block transition hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400">
+          <p class="font-display text-3xl font-bold grad-text-teal">8</p>
           <p class="text-xs text-slate-300 font-medium mt-0.5">Services</p>
-        </div>
+        </a>
 
-        <div class="stat-pill rounded-2xl px-5 py-3 text-center flex-1 min-w-0">
+        <a href="#how" aria-label="See our goal-focused planning process" class="stat-pill rounded-2xl px-5 py-3 text-center flex-1 min-w-0 block transition hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400">
           <p class="font-display text-xl font-bold text-white leading-tight">
             Goal<br />Focused
           </p>
           <p class="text-xs text-slate-300 font-medium mt-0.5">Planning</p>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -826,7 +846,7 @@
             What We <span class="grad-text-gold">Offer You</span>
           </h2>
           <p class="mt-3 text-slate-600 leading-relaxed">
-            Five focused services built around your goals and your family's
+            Eight focused services built around your goals and your family's
             future.
           </p>
         </div>
@@ -989,7 +1009,7 @@
 
         <!-- Row 2 — 2 cards centred -->
         <div
-          class="grid sm:grid-cols-2 gap-5 mt-5 lg:w-2/3 lg:mx-auto"
+          class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-5"
           data-aos="fade-up"
           data-aos-delay="120"
         >
@@ -1104,6 +1124,39 @@
               priorities, and different stages of life.
             </p>
            
+          </div>
+
+          <!-- Card 6 — Mediclaim -->
+          <div class="group relative rounded-3xl p-8 overflow-hidden hover:-translate-y-2 transition-all duration-300" style="background:linear-gradient(145deg,#07102a,#0e1c45);border:1px solid rgba(201,168,76,0.2);box-shadow:0 8px 32px rgba(7,16,42,0.18);min-height:260px">
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:rgba(13,148,136,0.15);border:1px solid rgba(45,212,191,0.35)">
+              <svg class="w-7 h-7" fill="none" stroke="#2DD4BF" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3zM12 8v8m-4-4h8" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Mediclaim</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Explore health cover options to help protect you and your family from unexpected medical expenses.</p>
+          </div>
+
+          <!-- Card 7 — Housing Loan -->
+          <div class="group relative rounded-3xl p-8 overflow-hidden hover:-translate-y-2 transition-all duration-300" style="background:linear-gradient(145deg,#07102a,#0e1c45);border:1px solid rgba(201,168,76,0.2);box-shadow:0 8px 32px rgba(7,16,42,0.18);min-height:260px">
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3)">
+              <svg class="w-7 h-7" fill="none" stroke="#C9A84C" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 11l9-7 9 7M5 10v10h14V10M9 20v-6h6v6" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Housing Loan</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Get guidance on housing finance options to support your home-buying plans and budget.</p>
+          </div>
+
+          <!-- Card 8 — PMS & AIF -->
+          <div class="group relative rounded-3xl p-8 overflow-hidden hover:-translate-y-2 transition-all duration-300" style="background:linear-gradient(145deg,#0e1c45,#172554);border:1px solid rgba(201,168,76,0.45);box-shadow:0 8px 40px rgba(201,168,76,0.12);min-height:260px">
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:rgba(201,168,76,0.18);border:1px solid rgba(201,168,76,0.5)">
+              <svg class="w-7 h-7" fill="none" stroke="#E2BF6B" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 19V5m0 14h17M8 15v-4m5 4V7m5 8V9" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">PMS &amp; AIF</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Learn about Portfolio Management Services and Alternative Investment Funds, including their suitability and risks.</p>
           </div>
         </div>
       </div>
@@ -2104,6 +2157,9 @@
                     <option>Life Insurance</option>
                     <option>Student Education Plans</option>
                     <option>Financial Planning</option>
+                    <option>Mediclaim</option>
+                    <option>Housing Loan</option>
+                    <option>PMS &amp; AIF</option>
                   </select>
                 </div>
                 <div class="mb-6">
@@ -2211,6 +2267,9 @@
         <li class="text-slate-400">Life Insurance</li>
         <li class="text-slate-400">Student Education Plans</li>
         <li class="text-slate-400">Financial Planning</li>
+        <li class="text-slate-400">Mediclaim</li>
+        <li class="text-slate-400">Housing Loan</li>
+        <li class="text-slate-400">PMS &amp; AIF</li>
       </ul>
     </div>
 
@@ -2223,7 +2282,7 @@
 
       <ul class="space-y-3 text-sm">
 
-        <!-- Phone -->
+        <!-- Phone number 1 -->
         <li>
           <a
             href="tel:+919323946987"
@@ -2248,6 +2307,7 @@
           </a>
         </li>
 
+        <!-- number 2 -->
           <li>
           <a
             href="tel:+919702731456"
@@ -2269,6 +2329,31 @@
             </svg>
 
             +91 97027 31456
+          </a>
+        </li>
+
+        <!-- number 3 -->
+         <li>
+          <a
+            href="tel:+919167120869"
+            class="flex items-center gap-2.5 hover:text-gold-400 transition-colors"
+          >
+            <svg
+              class="w-4 h-4 shrink-0"
+              style="color:#C9A84C"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 5a2 2 0 012-2h3l2 5-2.5 1.5a11 11 0 005 5L14 12l5 2v3a2 2 0 01-2 2A14 14 0 013 5z"
+              />
+            </svg>
+
+            +91 91671 20869
           </a>
         </li>
 
@@ -2354,6 +2439,31 @@
 
 </footer>
 
+    <dialog id="portfolioModal" aria-labelledby="portfolioModalTitle">
+      <div class="relative p-7 sm:p-9">
+        <button type="button" id="closePortfolioModal" aria-label="Close portfolio details" class="absolute top-5 right-5 w-10 h-10 grid place-items-center rounded-full text-slate-300 hover:text-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" d="m6 6 12 12M18 6 6 18" /></svg>
+        </button>
+        <span class="section-label">Experience &amp; Scale</span>
+        <h2 id="portfolioModalTitle" class="font-display text-3xl sm:text-4xl font-bold mt-5 pr-8">Built on trust.<br /><span class="grad-text-gold">Focused on your future.</span></h2>
+        <div class="mt-7 grid gap-3">
+          <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 flex items-center gap-4">
+            <span class="font-display text-3xl font-bold grad-text-teal">5,000</span>
+            <p class="text-sm sm:text-base text-slate-200">satisfied clients</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 flex items-center gap-4">
+            <span class="font-display text-3xl font-bold grad-text-gold">₹500 Cr</span>
+            <p class="text-sm sm:text-base text-slate-200">portfolio managed</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 flex items-center gap-4">
+            <span class="font-display text-3xl font-bold grad-text-teal">₹2,000 Cr</span>
+            <p class="text-sm sm:text-base text-slate-200">risk management overseen</p>
+          </div>
+        </div>
+      
+      </div>
+    </dialog>
+
     <!-- Floating WhatsApp button -->
     <a href="https://wa.me/919323946987?text=Hello%2C%20I%20have%20an%20enquiry%20from%20the%20MB%20Wealth%20website."
        target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"
@@ -2377,6 +2487,16 @@
 
       // Year
       document.getElementById("yr").textContent = new Date().getFullYear();
+
+      // Portfolio details dialog
+      const portfolioModal = document.getElementById("portfolioModal");
+      const portfolioModalTrigger = document.getElementById("portfolioModalTrigger");
+      const closePortfolioModal = document.getElementById("closePortfolioModal");
+      portfolioModalTrigger.addEventListener("click", () => portfolioModal.showModal());
+      closePortfolioModal.addEventListener("click", () => portfolioModal.close());
+      portfolioModal.addEventListener("click", (event) => {
+        if (event.target === portfolioModal) portfolioModal.close();
+      });
 
       // Nav scroll — also close mobile menu on scroll
       const nav = document.getElementById("nav");
